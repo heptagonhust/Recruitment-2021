@@ -54,7 +54,7 @@ Deadline: 2021-6-13 23:59:59
 
 Basic Workload use no more than ~2GB memory(use ~1GB normally), so we recommend you to run the basic workload in your local PC.
 
-When you makes your basic workload ~30% faster, you can contact the QQ group owner, then you will be granted permission to the super computing cluster. You can run your medium and advanced workload on the cluster.
+When you makes your basic workload **~30% faster**, you can contact the QQ group owner, then you will be granted permission to the **super computing cluster**. You can run your medium and advanced workload on the cluster.
 
 ## Reference
 
