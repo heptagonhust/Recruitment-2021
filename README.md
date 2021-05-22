@@ -8,15 +8,51 @@ QuEST is a new simulator of universal quantum circuits. QuEST is capable of simu
 
 Describing the state of an n-bit classical register requires just n bits while describing the state of an n-qubit quantum register requires 2^n complex numbers. As a result, simulating a quantum computer using a classical machine is believed to be exponentially expensive with respect to the number of qubits. But despite this, classical simulation of quantum computation is crucial for the study of new algorithms and architectures.
 
-## Rules
+## Evaluation
 
-## Basic
+In this recruitment, we provide three workloads including **basic**, **medium** and **advance**. You can find them in the example directory.
 
+For each workload, two output files will be generated: **probs.dat** and **stateVector.dat**. The former describes the probability of every qubit that equals to 1, while the latter provides the amplitude of the first ten state vectors, which are complex numbers including real and imagine parts. The evaluation will follow the rules below:
 
-## Medium
+1. The output files in each workload should be the exact same as the given references of probs.dat and stateVector.dat.
 
-## Advance
+2. The execution time will be evaluated by the number listed in the screen output file *.log on the ground that 1st condition is fulfilled. However, since the computing platform used by participants will impact the execution time, its specifics will be considered in scoring process.
 
-### [QuEST](https://quest.qtechtheory.org)
+3. Proposals written with clarity and rigorous description will benefit for higher score.
 
+4. You can optimize the source code of QuEST. But please note that the provided circuit workload-basic.cpp, workload-medium.cpp and workload-advance.cpp should not be modified. Any changes to them will void the score.
+
+## Hints
+
+### Basic
+
+This workload contains unitary gates and mystery gates. When running the workload, see the system-monitor e.g. htop/glances/dstat to find out the behaviors and parallel levels. Then try to apply some parallel methods to the codes, and note that all the changes in source codes(excluding workload source) should keep the outputs exact same.
+
+### Medium
+
+It's hard to run this workload in a single node, so feel free to implement the distributed optimizations.
+
+### Advance
+
+Common optimizations probably make no sense here, you should try something more advanced parallel technics like pipelining. We know that it's too difficult for freshmen to work it out, so you can just write your ideas down in the final proposal for evaluations.
+
+## Submit
+
+You should write a writeup/proposal(either one is OK) on all three workloads to let us know your works even failed tries.
+
+For our final evaluations, you should submit the writeup/proposal and the packages of your source codes(if you prepare three versions for three workloads respectively, you should archive all three tallballs).
+
+We strongly recommend that you should use git to preserve the full history of the project. And attach your GitHub repository link when submitting your work.
+
+Deadline: XXX
+
+## Hardware Provided
+
+Basic Workload use no more than ~2GB memory(use ~1GB normally), so we recommend you to run the basic in your local PC.
+
+TODO
+
+## Reference
+
+[QuEST](https://quest.qtechtheory.org)
 
