@@ -30,11 +30,11 @@ To build QuEST and workloads, you need to use `cmake`, `make`, and a C/C++ compi
 
 ### Basic
 
-This workload contains unitary gates and mystery gates. When running the workload, see the system-monitor e.g. htop/glances/dstat to find out the behaviors and parallel levels. Then try to apply some parallel methods to the codes, and note that all the changes in source codes(excluding workload source) should keep the outputs exact same.
+This workload contains unitary gates and mystery gates. When running the workload, see the system-monitor e.g. htop/glances/dstat to find out the behaviors and parallel levels. Then try to apply some parallel methods to the codes, and note that all the changes in source codes(excluding workload source) should keep the outputs exact same. You may also checkout the [程序性能分析](https://heptagonhust.github.io/HPC-roadmap/#%E7%A8%8B%E5%BA%8F%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90) part of HPC roadmap.
 
 ### Medium
 
-It's hard to run this workload in a single node, so feel free to implement the distributed optimizations.
+It's hard to run this workload in a single node, so feel free to implement the distributed optimizations. You may checkout [MPI](https://heptagonhust.github.io/HPC-roadmap/#%E5%AD%A6%E4%B9%A0mpi) part of HPC roadmap. Feel free to ask questions in the QQ group.
 
 ### Advance
 
