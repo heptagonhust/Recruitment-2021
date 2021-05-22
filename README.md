@@ -22,6 +22,10 @@ For each workload, two output files will be generated: **probs.dat** and **state
 
 4. You can optimize the source code of QuEST. But please note that the provided circuit workload-basic.cpp, workload-medium.cpp and workload-advance.cpp should not be modified. Any changes to them will void the score.
 
+## Build
+
+To build QuEST and workloads, you need to use `cmake`, `make`, and a C/C++ compiler. You can get useful information by STFW, RTFM and RTFSC.
+
 ## Hints
 
 ### Basic
