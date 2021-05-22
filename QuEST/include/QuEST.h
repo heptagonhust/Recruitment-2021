@@ -3200,6 +3200,7 @@ void u3Gate(Qureg qureg, int targetQubit, qreal theta, qreal phi, qreal lambda);
 void SqX(Qureg qureg, int targetQubit);
 void SqY(Qureg qureg, int targetQubit);
 void SqW(Qureg qureg, int targetQubit);
+void mysteryGate(Qureg qureg, const int controlQubit, const int targetQubit);
 void fSim(Qureg qureg, int targetQubit1, int targetQubit2, qreal theta, qreal phi);
 
 

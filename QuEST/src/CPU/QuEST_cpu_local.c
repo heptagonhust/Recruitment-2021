@@ -321,3 +321,8 @@ void statevec_swapQubitAmps(Qureg qureg, int qb1, int qb2)
 {
     statevec_swapQubitAmpsLocal(qureg, qb1, qb2);
 }
+
+void statevec_mysteryGate(Qureg qureg, const int controlQubit, const int targetQubit)
+{
+    statevec_mysteryGateLocal(qureg, controlQubit, targetQubit);
+}

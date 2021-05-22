@@ -20,6 +20,7 @@
 # include "QuEST_internal.h"
 # include "QuEST_validation.h"
 # include "QuEST_qasm.h"
+# include <assert.h>
 # include <stdlib.h>
 
 #ifdef __cplusplus
@@ -1198,6 +1199,18 @@ void SqW(Qureg qureg, int targetQubit){
     
     qasm_recordUnitary(qureg, u, targetQubit);
 }
+
+void mysteryGate(Qureg qureg, const int controlQubit, const int targetQubit) {
+    validateTarget(qureg, targetQubit, __func__);
+    
+    statevec_mysteryGate(qureg, controlQubit, targetQubit);
+    if (qureg.isDensityMatrix) {
+        assert(0);
+    }
+    
+    // no QASM methods supported for mistery gate
+}
+
 void fSim(Qureg qureg, int targetQubit1, int targetQubit2, qreal theta, qreal phi){
 
     validateMultiTargets(qureg, (int []) {targetQubit1, targetQubit2}, 2, __func__);

@@ -3598,3 +3598,42 @@ void statevec_setWeightedQureg(Complex fac1, Qureg qureg1, Complex fac2, Qureg q
     }
 }
 
+
+void statevec_mysteryGateLocal(Qureg qureg, const int controlQubit, const int targetQubit)
+{
+    const long long int numTasks=qureg.numAmpsPerChunk>>1;
+    // const long long int chunkSize=qureg.numAmpsPerChunk;
+    // const long long int chunkId=qureg.chunkId;
+
+    // set dimensions
+    long long int sizeHalfBlock = 1LL << targetQubit;  
+    long long int sizeBlock     = 2LL * sizeHalfBlock; 
+
+    qreal *stateVecReal = qureg.stateVec.real;
+    qreal *stateVecImag = qureg.stateVec.imag;
+
+    qreal coeff = 1.0/sqrt(2);
+
+    qreal stateRealUp,stateRealLo,stateImagUp,stateImagLo;
+
+    for (long long int thisTask=0; thisTask<numTasks; thisTask++) {
+        long long int thisBlock   = thisTask / sizeHalfBlock;
+        long long int indexUp     = thisBlock*sizeBlock + thisTask%sizeHalfBlock;
+        long long int indexLo     = indexUp + sizeHalfBlock;
+
+        int controlBit = extractBit(controlQubit, indexUp);
+        if (controlBit){
+            stateRealUp = stateVecReal[indexUp];
+            stateImagUp = stateVecImag[indexUp];
+
+            stateRealLo = stateVecReal[indexLo];
+            stateImagLo = stateVecImag[indexLo];
+
+            stateVecReal[indexUp] = coeff*(stateRealUp + stateRealLo);
+            stateVecImag[indexUp] = coeff*(stateImagUp + stateImagLo);
+
+            stateVecReal[indexLo] = coeff*(stateRealUp - stateRealLo);
+            stateVecImag[indexLo] = coeff*(stateImagUp - stateImagLo);
+        }
+    }
+}

@@ -245,6 +245,8 @@ void statevec_setWeightedQureg(Complex fac1, Qureg qureg1, Complex fac2, Qureg q
 
 void statevec_applyPauliSum(Qureg inQureg, enum pauliOpType* allCodes, qreal* termCoeffs, int numSumTerms, Qureg outQureg);
 
+void statevec_mysteryGate(Qureg qureg, const int controlQubit, const int targetQubit);
+
 # ifdef __cplusplus
 }
 # endif
