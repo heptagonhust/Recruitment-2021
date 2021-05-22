@@ -48,9 +48,23 @@ message(STATUS "Compiling ${USER_SOURCE_1} to executable ${OUTPUT_EXE}")
 # Create user executable
 add_executable(${OUTPUT_EXE_1} ${USER_SOURCE_1})
 
+# Link libraries to user executable, including QuEST library
+if (WIN32)
+    target_link_libraries(${OUTPUT_EXE_1} QuEST)
+else ()
+    target_link_libraries(${OUTPUT_EXE_1} QuEST m)
+endif()
+
 message(STATUS "Compiling ${USER_SOURCE_2} to executable ${OUTPUT_EXE}")
 # Create user executable
 add_executable(${OUTPUT_EXE_2} ${USER_SOURCE_2})
+
+# Link libraries to user executable, including QuEST library
+if (WIN32)
+    target_link_libraries(${OUTPUT_EXE_2} QuEST)
+else ()
+    target_link_libraries(${OUTPUT_EXE_2} QuEST m)
+endif()
 
 message(STATUS "Compiling ${USER_SOURCE_3} to executable ${OUTPUT_EXE}")
 # Create user executable
@@ -58,9 +72,9 @@ add_executable(${OUTPUT_EXE_3} ${USER_SOURCE_3})
 
 # Link libraries to user executable, including QuEST library
 if (WIN32)
-    target_link_libraries(${OUTPUT_EXE} QuEST)
+    target_link_libraries(${OUTPUT_EXE_3} QuEST)
 else ()
-    target_link_libraries(${OUTPUT_EXE} QuEST m)
+    target_link_libraries(${OUTPUT_EXE_3} QuEST m)
 endif()
 
 
