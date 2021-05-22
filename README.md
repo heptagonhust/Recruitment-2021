@@ -48,13 +48,13 @@ For our final evaluations, you should submit the writeup/proposal and the packag
 
 We strongly recommend that you should use git to preserve the full history of the project. And attach your GitHub repository link when submitting your work.
 
-Deadline: XXX
+Deadline: 2021-6-13 23:59:59
 
 ## Hardware Provided
 
-Basic Workload use no more than ~2GB memory(use ~1GB normally), so we recommend you to run the basic in your local PC.
+Basic Workload use no more than ~2GB memory(use ~1GB normally), so we recommend you to run the basic workload in your local PC.
 
-TODO
+When you makes your basic workload ~30% faster, you can contact the QQ group owner, then you will be granted permission to the super computing cluster. You can run your medium and advanced workload on the cluster.
 
 ## Reference
 
