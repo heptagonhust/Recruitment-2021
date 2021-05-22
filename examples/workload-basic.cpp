@@ -113,6 +113,14 @@ int main () {
     SqX( QReg, 25 );
     fSim( QReg, 12, 18, -2.348193821651514, -2.239884609233249 );
 
+    for (int ind=0; ind<numQubits; ++ind){
+        mysteryGate(QReg, ind, (ind+1)%numQubits);
+        mysteryGate(QReg, ind, (ind+2)%numQubits);
+        mysteryGate(QReg, ind, (ind+3)%numQubits);
+        mysteryGate(QReg, ind, (ind+4)%numQubits);
+        mysteryGate(QReg, ind, (ind+5)%numQubits);
+    }
+    
     qreal prob;
     for(int ind=0; ind<numQubits; ++ind){
         prob = calcProbOfOutcome(QReg, ind, 1);

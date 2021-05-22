@@ -12,8 +12,14 @@ project(QuEST_Project)
 # ----- USER OPTIONS ----------------------------------------------------------
 # -----------------------------------------------------------------------------
 
-set(USER_SOURCE  "examples/workload.cpp"  CACHE STRING "Source to build with QuEST library")
-set(OUTPUT_EXE   "demo"  CACHE STRING "Executable to compile to")
+set(USER_SOURCE_1  "examples/workload-basic.cpp"  CACHE STRING "Source to build with QuEST library")
+set(OUTPUT_EXE_1   "basic"  CACHE STRING "Executable to compile to")
+
+set(USER_SOURCE_2  "examples/workload-medium.cpp"  CACHE STRING "Source to build with QuEST library")
+set(OUTPUT_EXE_2   "medium"  CACHE STRING "Executable to compile to")
+
+set(USER_SOURCE_3  "examples/workload-advance.cpp"  CACHE STRING "Source to build with QuEST library")
+set(OUTPUT_EXE_3   "advance"  CACHE STRING "Executable to compile to")
 
 option(TESTING "Enable test suite functionality -- requires test suite available" ON)
 set(QuEST_UTIL_DIR_NAME "utilities" CACHE STRING
@@ -38,11 +44,17 @@ endif()
 # ----- USER EXECUTABLE -------------------------------------------------------
 # -----------------------------------------------------------------------------
 
-message(STATUS "Compiling ${USER_SOURCE} to executable ${OUTPUT_EXE}")
-
-
+message(STATUS "Compiling ${USER_SOURCE_1} to executable ${OUTPUT_EXE}")
 # Create user executable
-add_executable(${OUTPUT_EXE} ${USER_SOURCE})
+add_executable(${OUTPUT_EXE_1} ${USER_SOURCE_1})
+
+message(STATUS "Compiling ${USER_SOURCE_2} to executable ${OUTPUT_EXE}")
+# Create user executable
+add_executable(${OUTPUT_EXE_2} ${USER_SOURCE_2})
+
+message(STATUS "Compiling ${USER_SOURCE_3} to executable ${OUTPUT_EXE}")
+# Create user executable
+add_executable(${OUTPUT_EXE_3} ${USER_SOURCE_3})
 
 # Link libraries to user executable, including QuEST library
 if (WIN32)
